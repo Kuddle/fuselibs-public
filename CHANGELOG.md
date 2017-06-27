@@ -10,6 +10,8 @@
 - Backwards incompatible optimization change: The `protected virtual void Visual.OnInvalidateWorldTransform()` method was removed. The contract of this method was very expensive to implement as it had to be called on all nodes, just in case it was overridden somewhere. If you have custom Uno code relying on this method (unlikely), then please rewrite to explicitly subscribe to the `Visual.WorldTransformInvalidated` event instead, like so: Override `OnRooted` and do `WorldTransformInvalidated += OnInvalidateWorldTransform;`, Override `OnUnrooted` and to `WorldTransformInvalidated -= OnInvalidateWorldTransform;`, then rewrite `protected override void OnInvalidateWorldTransform()` to `void OnInvalidateWorldTransform(object sender, EventArgs args)`
 ## OpenGL Optimizations
 - To improve rendering speed, Fuse no longer checks for OpenGL errors at runtime by default in some performance-critical code paths. If your app contains custom OpenGL code (unlikely), this may cause the app to change behavior in error scenarios. To get the old behavior, compile with `-DDEBUG_GL`.
+## AppConfig
+-  Added `<AppConfig>` class which can be used to configure the `Background` of the `App` using a data binding expression. This allows the `Background` (which is the fastest way to fill the screen with a solid color) to be controlled by a data source.
 
 ## Multitouch
 - Fixed issue where during multitouch all input would stop if one finger was lifted.
