@@ -26,6 +26,9 @@
 - Added `OnChildMoved` to `Visual`. Anything implementing `OnChildAdded` or `OnChildRemoved` will likely need to implement `OnChildMoved` as well. This happens when a child's position in `Children` list changes.
 - Added `OnChildMovedWhileRooted` to `IParentObserver`
 
+### WebView
+- Fixed issue where Uri schemes set in the unoproj were incorrectly matched and would interfere with irrelevant URLs.
+
 # 1.1
 
 ### Fuse.ImageTools
