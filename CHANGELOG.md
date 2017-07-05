@@ -19,6 +19,7 @@
 ## Multitouch
 - Fixed issue where during multitouch all input would stop if one finger was lifted.
 - Added the option to opt-out of automatic handling of touch events when implementing a native view.
+- Fixed a bug which prevented elements like `Image` to use fast-track rendering in trivial cases with opacity (avoids render to texture).
 
 ## Attract
 - Added the `attract` feature, which was previously only in premiumlibs. This provides a much simpler syntax for animation than the `Attractor` behavior.
