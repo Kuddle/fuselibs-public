@@ -84,6 +84,20 @@
 					<Toggle Target="_linespacing" />
 				</Clicked>
 			</StdButton>
+
+			<h2 ColumnSpan="2">TextInput with TextAlignment</h2>
+			<Indicator ux:Name="IndTextAlignmentLeft"/>
+			<StdTextInput TextAlignment="Left" PlaceholderText="Left">
+				<WhileFocusWithin><Change IndTextAlignmentLeft.Value="true" /></WhileFocusWithin>
+			</StdTextInput>
+			<Indicator ux:Name="IndTextAlignmentCenter"/>
+			<StdTextInput TextAlignment="Center" PlaceholderText="Center">
+				<WhileFocusWithin><Change IndTextAlignmentCenter.Value="true" /></WhileFocusWithin>
+			</StdTextInput>
+			<Indicator ux:Name="IndTextAlignmentRight"/>
+			<StdTextInput TextAlignment="Right" PlaceholderText="Right">
+				<WhileFocusWithin><Change IndTextAlignmentRight.Value="true" /></WhileFocusWithin>
+			</StdTextInput>
 		</Grid>
 	</ScrollView>
 </Page>
